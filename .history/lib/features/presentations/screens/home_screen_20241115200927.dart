@@ -8,7 +8,6 @@ import 'package:exchange/features/theme/pallets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:popover/popover.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,86 +30,35 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme
-          .of(context)
-          .scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
 
-        backgroundColor: Theme
-            .of(context)
-            .colorScheme
-            .onSurface,
+        backgroundColor: Theme.of(context).colorScheme.onSurface,
         elevation: 0,
         shadowColor: Colors.grey.withOpacity(0.5),
 
-        title: Theme
-            .of(context)
-            .brightness == Brightness.dark
-            ? const Image(
+        title: Image(
           image: AssetImage("assets/images/pngs/logo(1).png"),
-          width: 120,
-        ) : const Image(
-          image: AssetImage("assets/images/pngs/logo(3).png"),
           width: 120,
         ),
         actions: [
-          const Image(
+          Image(
             image: AssetImage("assets/images/pngs/profile.png"),
             width: 20,
-          ),
-          const SizedBox(
-            width: 5,
-          ),
-          Icon(
-            Icons.language,
-            color: Theme
-                .of(context)
-                .colorScheme
-                .background,
           ),
           SizedBox(
             width: 5,
           ),
-          Builder(
-            builder: (context) {
-              return InkWell(
-                onTap: () {
-                  showPopover(
-                    context: context,
-                    bodyBuilder: (context) =>  Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Exchange"),
-                          10.verticalSpace,
-                          Text("Wallets"),
-                          10.verticalSpace,
-
-                          Text("Roqqu Hub"),
-                          10.verticalSpace,
-
-                          Text("Log out",style: TextStyle(color: Theme.of(context).colorScheme.onBackground),),
-                        ],
-                      ),
-                    ),
-                    direction: PopoverDirection.bottom,
-                    width: 100,
-                    height: 150,
-                    arrowHeight: 15,
-                    arrowWidth: 30,
-                    backgroundColor: Theme.of(context).colorScheme.surface
-                  );
-                },
-                child: Icon(
-                  Icons.sort,
-                  color: Theme
-                      .of(context)
-                      .colorScheme
-                      .background,
-                ),
-              );
-            }
+          Icon(
+            Icons.language,
+            color: Theme.of(context).colorScheme.background,
+          ),
+          SizedBox(
+            width: 5,
+          ),
+          Icon(
+            Icons.sort,
+            color: Theme.of(context).colorScheme.background,
           ),
           SizedBox(
             width: 10,
@@ -129,10 +77,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(0),
-                    color: Theme
-                        .of(context)
-                        .colorScheme
-                        .onSurface,
+                    color: Theme.of(context).colorScheme.onSurface,
                     border: Border.all(color: Colors.grey.withOpacity(0.5))),
                 child: Column(
                   children: [
@@ -145,10 +90,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: Theme
-                                .of(context)
-                                .colorScheme
-                                .onError,
+                            color: Theme.of(context).colorScheme.onError,
                             border: Border.all(
                                 color: Colors.grey.withOpacity(0.1))),
                         child: TabBar(
@@ -157,44 +99,31 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             indicatorPadding: EdgeInsets.zero,
                             tabAlignment: TabAlignment.fill,
                             labelColor:
-                            Theme
-                                .of(context)
-                                .colorScheme
-                                .onBackground,
+                                Theme.of(context).colorScheme.onBackground,
                             unselectedLabelColor:
-                            Theme
-                                .of(context)
-                                .colorScheme
-                                .onBackground,
+                                Theme.of(context).colorScheme.onBackground,
                             controller: _controller,
                             dividerColor: Colors.transparent,
-                            indicatorSize: TabBarIndicatorSize.tab,
+                            indicatorSize:TabBarIndicatorSize.tab ,
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 2, vertical: 2),
                             indicator: ShapeDecoration(
-                              color: Theme
-                                  .of(context)
-                                  .colorScheme
-                                  .surface,
+                              color: Theme.of(context).colorScheme.surface,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5)),
                             ),
                             tabs: const [
                               Padding(
                                 padding: EdgeInsets.all(0.0),
-                                child: Text(
-                                  "Charts", style: TextStyle(fontSize: 10),),
+                                child: Text("Charts",style: TextStyle(fontSize: 10),),
                               ),
                               Padding(
                                 padding: EdgeInsets.all(0.0),
-                                child: Text(
-                                  "Orderbook", style: TextStyle(fontSize: 10),),
+                                child: Text("Orderbook",style: TextStyle(fontSize: 10),),
                               ),
                               Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 0, vertical: 10),
-                                child: Text("Recent trades",
-                                  style: TextStyle(fontSize: 10),),
+                                padding: EdgeInsets.symmetric(horizontal: 0,vertical: 10),
+                                child: Text("Recent trades",style: TextStyle(fontSize: 10),),
                               ),
                             ]),
                       ),
@@ -206,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       width: double.maxFinite,
                       height: 485,
                       child:
-                      TabBarView(controller: _controller, children: const [
+                          TabBarView(controller: _controller, children: const [
                         ChartsTab(),
                         OrderBooksTab(),
                         RecentTradesTab(),
@@ -219,22 +148,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 height: 10,
               ),
               Container(
-                color: Theme
-                    .of(context)
-                    .colorScheme
-                    .onSurface,
+                color: Theme.of(context).colorScheme.onSurface,
                 padding: EdgeInsets.only(top: 10),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 5, vertical: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 5),
                   child: Container(
                     padding: EdgeInsets.all(0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
-                      color: Theme
-                          .of(context)
-                          .colorScheme
-                          .onSurface,
+                      color: Theme.of(context).colorScheme.onSurface,
                       // border: Border.all(color: Colors.grey.withOpacity(0.5))
 
                     ),
@@ -243,43 +165,31 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         indicatorPadding: EdgeInsets.zero,
                         tabAlignment: TabAlignment.fill,
                         labelColor:
-                        Theme
-                            .of(context)
-                            .colorScheme
-                            .onBackground,
+                        Theme.of(context).colorScheme.onBackground,
                         unselectedLabelColor:
-                        Theme
-                            .of(context)
-                            .colorScheme
-                            .onBackground,
+                        Theme.of(context).colorScheme.onBackground,
                         controller: _controller2,
                         dividerColor: Colors.transparent,
-                        indicatorSize: TabBarIndicatorSize.tab,
+                        indicatorSize:TabBarIndicatorSize.tab ,
                         padding: const EdgeInsets.symmetric(
                             horizontal: 4, vertical: 2),
                         indicator: ShapeDecoration(
-                          color: Theme
-                              .of(context)
-                              .colorScheme
-                              .onPrimaryContainer,
+                          color: Theme.of(context).colorScheme.onPrimaryContainer,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5),),
+                              borderRadius: BorderRadius.circular(5),),
                         ),
                         tabs: const [
                           Padding(
                             padding: EdgeInsets.all(10.0),
-                            child: Text("Open Orders",
-                              style: TextStyle(fontSize: 10),),
+                            child: Text("Open Orders",style: TextStyle(fontSize: 10),),
                           ),
                           Padding(
                             padding: EdgeInsets.all(3.0),
-                            child: Text("Position",
-                              style: TextStyle(fontSize: 13),),
+                            child: Text("Position",style: TextStyle(fontSize: 13),),
                           ),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 5),
-                            child: Text("Recent",
-                              style: TextStyle(fontSize: 13),),
+                            child: Text("Recent",style: TextStyle(fontSize: 13),),
                           ),
                         ]),
                   ),
@@ -291,10 +201,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 child: TabBarView(controller: _controller2, children: [
                   Container(
                     padding: EdgeInsets.all(20),
-                    color: Theme
-                        .of(context)
-                        .colorScheme
-                        .onSurface,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
                     child: Center(
                       child: Column(
                         children: [
@@ -307,10 +214,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 fontSize: 18,
                                 fontWeight: FontWeight.w700,
                                 color:
-                                Theme
-                                    .of(context)
-                                    .colorScheme
-                                    .onBackground),
+                                    Theme.of(context).colorScheme.onBackground),
                           ),
                           Text(
                             textAlign: TextAlign.center,
@@ -319,10 +223,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
                                 color:
-                                Theme
-                                    .of(context)
-                                    .colorScheme
-                                    .onBackground),
+                                    Theme.of(context).colorScheme.onBackground),
                           )
                         ],
                       ),
@@ -330,10 +231,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   ),
                   Container(
                     padding: EdgeInsets.all(20),
-                    color: Theme
-                        .of(context)
-                        .colorScheme
-                        .onSurface,
+                    color: Theme.of(context).colorScheme.onSurface,
                     child: Center(
                       child: Column(
                         children: [
@@ -346,10 +244,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 fontSize: 18,
                                 fontWeight: FontWeight.w700,
                                 color:
-                                Theme
-                                    .of(context)
-                                    .colorScheme
-                                    .onBackground),
+                                    Theme.of(context).colorScheme.onBackground),
                           ),
                           Text(
                             textAlign: TextAlign.center,
@@ -365,10 +260,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   ),
                   Container(
                     padding: EdgeInsets.all(20),
-                    color: Theme
-                        .of(context)
-                        .colorScheme
-                        .onSurface,
+                    color: Theme.of(context).colorScheme.onSurface,
                     child: Center(
                       child: Column(
                         children: [
@@ -381,10 +273,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 fontSize: 18,
                                 fontWeight: FontWeight.w700,
                                 color:
-                                Theme
-                                    .of(context)
-                                    .colorScheme
-                                    .onBackground),
+                                    Theme.of(context).colorScheme.onBackground),
                           ),
                           Text(
                             textAlign: TextAlign.center,
@@ -412,12 +301,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         onPressed: () {
                           // CustomDialogs.showBottomSheet(context, BuyWidget());
                           showModalBottomSheet(
-                              constraints: BoxConstraints(minHeight: 0.8.sh),
+                         constraints: BoxConstraints(minHeight: 0.8.sh),
                               // barrierColor: Colors.transparent
                               // ,
                               backgroundColor: Colors.transparent,
                               elevation: 2,
-                              scrollControlDisabledMaxHeightRatio: 0.8.sh,
+                              scrollControlDisabledMaxHeightRatio:0.8.sh ,
                               context: context,
                               builder: (index) => BuyWidget());
                         },

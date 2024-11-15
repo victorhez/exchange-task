@@ -11,110 +11,78 @@ class BTC_USDT extends StatefulWidget {
 }
 
 class _BTC_USDTState extends State<BTC_USDT> {
-  String selectedPair = "BTC/USDT";
-
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(0),
-          color: Theme.of(context).colorScheme.onSurface,
+          color: Theme
+              .of(context)
+              .colorScheme
+              .onSurface,
           border: Border.all(color: Colors.grey.withOpacity(0.5))),
       child: Column(
         children: [
           Row(
             children: [
-              const Image(
+              Image(
                 image: AssetImage("assets/images/pngs/coins.png"),
                 width: 50,
               ),
-              const SizedBox(
+              SizedBox(
                 width: 8,
               ),
               Text(
-                selectedPair,
+                "BTC/USDT",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
-                  color: Theme.of(context).colorScheme.onBackground,
-                ),
+                  color: Theme
+                      .of(context)
+                      .colorScheme
+                      .onBackground,),
               ),
-              const SizedBox(
+              SizedBox(
                 width: 16,
               ),
-              PopupMenuButton<String>(
-                color: Theme.of(context).colorScheme.surface,
-                onSelected: (value) {
-                  setState(() {
-                    selectedPair = value;
-                  });
-                },
-                icon: Icon(
-                  Icons.keyboard_arrow_down_outlined,
-                  color: Theme.of(context).colorScheme.onBackground,
-                ),
-                itemBuilder: (context) => [
-                  PopupMenuItem(
-                    value: "BTC/USDT",
-                    child: Text("BTC/USDT",style: TextStyle(color: Theme
-                        .of(context)
-                        .colorScheme
-                        .onBackground,),),
-                  ),
-                  PopupMenuItem(
-                    value: "ETH/USDT",
-                    child: Text("ETH/USDT",style: TextStyle(color: Theme
-                        .of(context)
-                        .colorScheme
-                        .onBackground,),),
-                  ),
-                  PopupMenuItem(
-                    value: "BNB/USDT",
-                    child: Text("BNB/USDT",style: TextStyle(color: Theme
-        .of(context)
-        .colorScheme
-        .onBackground,),),
-                  ),
-                  PopupMenuItem(
-                    value: "BTC/ETH",
-                    child: Text("BTC/ETH",style: TextStyle(color: Theme
-                        .of(context)
-                        .colorScheme
-                        .onBackground,),),
-                  ),
-                ],
+              Icon(
+                Icons.keyboard_arrow_down_outlined,
+                color: Theme
+                    .of(context)
+                    .colorScheme
+                    .onBackground,
               ),
-              const SizedBox(
+              SizedBox(
                 width: 16,
               ),
               Text(
                 "\$20,634",
-                style: const TextStyle(
-                  color: Color(0xff00c076),
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+                style: TextStyle(
+                    color: Color(0xff00c076),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600),
+              )
             ],
           ),
-          15.verticalSpace,
+         15.verticalSpace,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
+               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
                       Icon(
                         Icons.access_time_outlined,
-                        color: Theme.of(context).colorScheme.background,
+                        color: Theme
+                            .of(context)
+                            .colorScheme
+                            .background,
                         size: 18,
                       ),
-                      SizedBox(
-                        width: 5,
-                      ),
+                      SizedBox(width: 5,),
                       Text(
                         "24h change",
                         style: TextStyle(
@@ -124,9 +92,7 @@ class _BTC_USDTState extends State<BTC_USDT> {
                       )
                     ],
                   ),
-                  SizedBox(
-                    height: 5,
-                  ),
+                  SizedBox(height: 5,),
                   Text(
                     "520.80 +1.25%",
                     style: TextStyle(
@@ -134,6 +100,7 @@ class _BTC_USDTState extends State<BTC_USDT> {
                         fontSize: 15,
                         fontWeight: FontWeight.w500),
                   )
+
                 ],
               ),
               SizedBox(
@@ -144,7 +111,7 @@ class _BTC_USDTState extends State<BTC_USDT> {
                   color: Colors.grey.withOpacity(0.5),
                 ),
               ),
-              Column(
+               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
@@ -154,9 +121,7 @@ class _BTC_USDTState extends State<BTC_USDT> {
                         color: Color(0xff8d98af),
                         size: 18,
                       ),
-                      SizedBox(
-                        width: 5,
-                      ),
+                      SizedBox(width: 5,),
                       Text(
                         "24h high",
                         style: TextStyle(
@@ -166,16 +131,18 @@ class _BTC_USDTState extends State<BTC_USDT> {
                       )
                     ],
                   ),
-                  SizedBox(
-                    height: 5,
-                  ),
+                  SizedBox(height: 5,),
                   Text(
                     "520.80 +1.25%",
                     style: TextStyle(
-                        color: Theme.of(context).colorScheme.onBackground,
+                        color: Theme
+                            .of(context)
+                            .colorScheme
+                            .onBackground,
                         fontSize: 15,
                         fontWeight: FontWeight.w500),
                   )
+
                 ],
               ),
               SizedBox(
@@ -186,7 +153,7 @@ class _BTC_USDTState extends State<BTC_USDT> {
                   color: Colors.grey.withOpacity(0.5),
                 ),
               ),
-              Column(
+               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
@@ -196,9 +163,7 @@ class _BTC_USDTState extends State<BTC_USDT> {
                         color: Color(0xff8d98af),
                         size: 18,
                       ),
-                      SizedBox(
-                        width: 5,
-                      ),
+                      SizedBox(width: 5,),
                       Text(
                         "24h low",
                         style: TextStyle(
@@ -208,18 +173,21 @@ class _BTC_USDTState extends State<BTC_USDT> {
                       )
                     ],
                   ),
-                  SizedBox(
-                    height: 5,
-                  ),
+                  SizedBox(height: 5,),
                   Text(
                     "520.80 +1.25%",
                     style: TextStyle(
-                        color: Theme.of(context).colorScheme.onBackground,
+                        color:Theme
+                            .of(context)
+                            .colorScheme
+                            .onBackground,
                         fontSize: 15,
                         fontWeight: FontWeight.w500),
                   )
+
                 ],
               ),
+
             ],
           )
         ],

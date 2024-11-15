@@ -9,6 +9,6 @@ class RecentTradesTab extends StatefulWidget {
 class _RecentTradesTabState extends State<RecentTradesTab> {
   @override
   Widget build(BuildContext context) {
-    return  Container(color: Theme.of(context).colorScheme.onSurface,);
+    return  Container(color: Colors.black,);
   }
 }

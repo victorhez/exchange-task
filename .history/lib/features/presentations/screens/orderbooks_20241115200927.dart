@@ -175,8 +175,7 @@ class _OrderBooksTabState extends State<OrderBooksTab> {
                                 child: Container(
                                   height: 25,
                                   decoration: BoxDecoration(
-                                    color: Theme.of(context).brightness == Brightness.dark
-                                        ?color.withOpacity(0.8):Color(0xffffe8e1),
+                                    color: color.withOpacity(0.8),
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   width: 100,
@@ -226,8 +225,7 @@ class _OrderBooksTabState extends State<OrderBooksTab> {
                                 child: Container(
                                   height: 25,
                                   decoration: BoxDecoration(
-                                    color:Theme.of(context).brightness == Brightness.dark
-                                        ?color.withOpacity(0.8):Color(0xffffe8e1),
+                                    color: color.withOpacity(0.8),
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   width: 0,
@@ -263,7 +261,7 @@ class _OrderBooksTabState extends State<OrderBooksTab> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
+                        Text(
                           '36920.12',
                           style: TextStyle(color: Colors.red, fontSize: 16),
                         ),
@@ -277,8 +275,7 @@ class _OrderBooksTabState extends State<OrderBooksTab> {
                                 child: Container(
                                   height: 25,
                                   decoration: BoxDecoration(
-                                    color:Theme.of(context).brightness == Brightness.dark
-                                        ?color.withOpacity(0.8):Color(0xffffe8e1),
+                                    color: color.withOpacity(0.8),
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   width: 80,
@@ -328,8 +325,7 @@ class _OrderBooksTabState extends State<OrderBooksTab> {
                                 child: Container(
                                   height: 25,
                                   decoration: BoxDecoration(
-                                    color: Theme.of(context).brightness == Brightness.dark
-                                        ?color.withOpacity(0.8):Color(0xffffe8e1),
+                                    color: color.withOpacity(0.8),
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   width: 0,
@@ -379,8 +375,7 @@ class _OrderBooksTabState extends State<OrderBooksTab> {
                                 child: Container(
                                   height: 25,
                                   decoration: BoxDecoration(
-                                    color:Theme.of(context).brightness == Brightness.dark
-                                        ?color.withOpacity(0.8):Color(0xffffe8e1),
+                                    color: color.withOpacity(0.8),
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   width: 400,
@@ -445,11 +440,9 @@ class _OrderBooksTabState extends State<OrderBooksTab> {
                               Positioned(
                                 right: 2,
                                 child: Container(
-
                                   height: 25,
                                   decoration: BoxDecoration(
-                                    color:Theme.of(context).brightness == Brightness.dark
-                                        ? barColor.withOpacity(0.8): Color(0xffdef6e9),
+                                    color: barColor.withOpacity(0.8),
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   width: 400,
@@ -499,8 +492,7 @@ class _OrderBooksTabState extends State<OrderBooksTab> {
                                 child: Container(
                                   height: 25,
                                   decoration: BoxDecoration(
-                                    color: Theme.of(context).brightness == Brightness.dark
-                                        ? barColor.withOpacity(0.8): Color(0xffdef6e9),
+                                    color: barColor.withOpacity(0.8),
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   width: 180,
@@ -550,8 +542,7 @@ class _OrderBooksTabState extends State<OrderBooksTab> {
                                 child: Container(
                                   height: 25,
                                   decoration: BoxDecoration(
-                                    color:Theme.of(context).brightness == Brightness.dark
-                                        ? barColor.withOpacity(0.8): Color(0xffdef6e9),
+                                    color: barColor.withOpacity(0.8),
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   width: 150,
@@ -601,8 +592,7 @@ class _OrderBooksTabState extends State<OrderBooksTab> {
                                 child: Container(
                                   height: 25,
                                   decoration: BoxDecoration(
-                                    color:Theme.of(context).brightness == Brightness.dark
-                                        ? barColor.withOpacity(0.8): Color(0xffdef6e9),
+                                    color: barColor.withOpacity(0.8),
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   width: 0,
@@ -652,8 +642,7 @@ class _OrderBooksTabState extends State<OrderBooksTab> {
                                 child: Container(
                                   height: 25,
                                   decoration: BoxDecoration(
-                                    color:Theme.of(context).brightness == Brightness.dark
-                                        ? barColor.withOpacity(0.8): Color(0xffdef6e9),
+                                    color: barColor.withOpacity(0.8),
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   width: 150,
@@ -693,3 +682,5 @@ class _OrderBooksTabState extends State<OrderBooksTab> {
     );
   }
 }
+
+

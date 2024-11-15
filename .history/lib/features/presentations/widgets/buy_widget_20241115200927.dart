@@ -1,10 +1,6 @@
-
+import 'package:exchange/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'field_textfield.dart';
-
-
 
 class BuyWidget extends StatefulWidget {
   const BuyWidget({super.key});
@@ -15,8 +11,6 @@ class BuyWidget extends StatefulWidget {
 
 class _BuyWidgetState extends State<BuyWidget> {
 
-
-  bool checked =false;
   String selectedOption = "Limit";
   bool _isBuySelected = true;
   @override
@@ -76,7 +70,7 @@ class _BuyWidgetState extends State<BuyWidget> {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          _isBuySelected = false;
+                          // _isBuySelected = false;
                         });
                       },
                       child: Container(
@@ -210,12 +204,8 @@ class _BuyWidgetState extends State<BuyWidget> {
                       )
                     ],
                   ),
-
-                  SizedBox(
-                    width: 100,
-                      child: FilledTextField(hint: "",)),
                   Text(
-                    "USD",
+                    "0.00 USD",
                     style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
@@ -252,11 +242,8 @@ class _BuyWidgetState extends State<BuyWidget> {
                       )
                     ],
                   ),
-                  SizedBox(
-                      width: 100,
-                      child: FilledTextField(hint: "",)),
                   Text(
-                    "USD",
+                    "0.00 USD",
                     style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
@@ -315,31 +302,20 @@ class _BuyWidgetState extends State<BuyWidget> {
             10.verticalSpace,
             Row(
               children: [
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      checked = !checked; // Toggle the state
-                    });
-                  },
-                  child: Icon(
-                    checked
-                        ? Icons.check_box
-                        : Icons.check_box_outline_blank_outlined,
-                    color: Theme.of(context).colorScheme.background,
-                    size: 16,
-                    weight: 0.5,
-                  ),
+                Icon(
+                  Icons.check_box_outline_blank_outlined,
+                  color: Theme.of(context).colorScheme.background,
+                  size: 16,
+                  weight: 0.5,
                 ),
                 const SizedBox(
                   width: 3,
                 ),
                 Text(
                   "Post Only",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.background,
-                  ),
+                  style: TextStyle(color:Theme.of(context).colorScheme.background),
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 3,
                 ),
                 Icon(
