@@ -20,7 +20,8 @@ This Flutter project is a mobile application UI that closely follows the design 
 
 To showcase the UI and interaction, I've included a recording of the app in action. You can view it below:
 
-![Project Demo](record.mp4)
+[![Watch the video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://github.com/victorhez/exchange-task/blob/main/record.mp4)
+
 
 > Note: The video demonstrates the UI implementation with mocked data since access to the Binance WebSocket API was restricted.
 
